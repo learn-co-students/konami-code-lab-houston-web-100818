@@ -13,4 +13,17 @@ const codes = [
 
 function init() {
   // your code here
+  let index = 0;
+  document.body.addEventListener('keydown', function keyDownHandler(e){
+    const key = e.key;
+    if(key === codes[index]){
+      index++;
+      if (index === codes.length){
+        alert("You entered the Konami Code!")
+        index = 0;
+      };
+    }else{
+      index = 0;
+    };
+  });
 }
